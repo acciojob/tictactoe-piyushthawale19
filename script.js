@@ -7,13 +7,13 @@ const message = document.querySelector(".message");
 let player1 = "";
 let player2 = "";
 let currentPlayer = "";
-let currentSymbol = "X";
+let currentSymbol = "x";
 let board = Array(9).fill("");
 let gameOver = false;
 
 submit.addEventListener("click", () => {
-    player1 = document.getElementById("player-1").value;
-    player2 = document.getElementById("player-2").value;
+    player1 = document.getElementById("player1").value;
+    player2 = document.getElementById("player2").value;
 
     if (player1 === "" || player2 === "") return;
 
@@ -49,10 +49,10 @@ cells.forEach(cell => {
 
         if (currentPlayer === player1) {
             currentPlayer = player2;
-            currentSymbol = "O";
+            currentSymbol = "o";
         } else {
             currentPlayer = player1;
-            currentSymbol = "X";
+            currentSymbol = "x";
         }
 
         message.textContent = `${currentPlayer}, you're up`;
