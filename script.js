@@ -21,7 +21,7 @@ submit.addEventListener("click", () => {
     game.style.display = "block";
 
     currentPlayer = player1;
-    currentSymbol = "X";
+    currentSymbol = "x";
     message.textContent = `${currentPlayer}, you're up`;
 });
 
@@ -31,8 +31,8 @@ cells.forEach(cell => {
     cell.addEventListener("click", function () {
 
         if (gameOver || this.textContent !== "") return;
-
-        this.textContent = currentSymbol;
+			
+		this.innerText = currentSymbol;
         board[Number(this.id) - 1] = currentSymbol;
 
         if (checkWinner()) {
